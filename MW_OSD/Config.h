@@ -1,3 +1,5 @@
+
+// This is Version 1.7 https://github.com/ShikOfTheRa/scarab-osd
 /*--------------------------       MANDATORY configurable parameters      ----------------------------------------------------*/
 /*--------------------------       MANDATORY configurable parameters      ----------------------------------------------------*/
 
@@ -5,7 +7,7 @@
 
 /********************       OSD HARDWARE settings      *********************/
 //Choose ONLY ONE option:
-//#define MINIMOSD                  // Uncomment this if using standard MINIMOSD hardware (default)
+#define MINIMOSD                  // Uncomment this if using standard MINIMOSD hardware (default)
 //#define MICROMINIMOSD             // Uncomment this if using the MICRO MINIMOSD hardware
 //#define AEROMAX                   // Uncomment this if using MWOSD AEROMAX hardware
 //#define RTFQV1                    // Uncomment this if using standard RTFQ/Witespy V1.1 OSD, select this to correct for both swapped bat1/bat 2 and to also use alternative resistors / pinouts.  
@@ -33,7 +35,7 @@
 // Choose ONLY ONE option from the following long list :-
 
 // latest release...
-//#define BETAFLIGHT                // Uncomment this if you are using latest BETAFLIGHT version 3.1 onwards
+#define BETAFLIGHT                // Uncomment this if you are using latest BETAFLIGHT version 3.1 onwards
 //#define CLEANFLIGHT               // Uncomment this if you are using latest CLEANFLIGHT version from repository (2.0 at time of this MWOSD release)
 //#define iNAV                      // Uncomment this if you are using latest iNAV version from repository (1.01 at time of this MWOSD release)
 //#define APM                       // Uncomment this if you are using APM MAVLINK 1.0 compatible FC
@@ -67,13 +69,13 @@
 
 /********************       AIRCRAFT/INSTALLATION TYPE settings      *********************/
 //Choose ONLY ONE option:
-//#define ROTORCRAFT                // Default for multirotors etc.
+#define ROTORCRAFT                // Default for multirotors etc.
 //#define FIXEDWING                 // Uncomment this if you are using fixed wing with MultiWii or Baseflight 
 
 
 /********************       Debug      *********************/
 //#define DEBUG 4                   // Enable/disable option to display OSD debug values. Define which OSD switch position to show debug on screen display 0 (default), 1 or 2. 4 for always on
-#define DEBUGMENU                   // Enable to display debug values in OSD menu 
+//#define DEBUGMENU                   // Enable to display debug values in OSD menu 
 
 
 /*--------------------------       INITIALISATION options       ----------------------------------------------------*/
@@ -163,7 +165,7 @@
 
 /******************** Serial speed settings *********************/
 // Overides defaults if required (57.6k for MAVLINK based or 115k for all others). 
-//#define BAUDRATE 115200
+#define BAUDRATE 115200
 //#define BAUDRATE 57600
 //#define BAUDRATE 38400
 //#define BAUDRATE 19200
@@ -249,13 +251,13 @@
 //NOSUMMARYTHROTTLERESET            // Enable to supress summary display clearing from throttle
 
 /********************       Power / efficiency display Settings         ************************/
-#define DISPLAYWATTS                // Enable this to display Watts (if Watts selected in layouts). Select one of WATTS/MAHMIN/EFFICIENCY
+//#define DISPLAYWATTS                // Enable this to display Watts (if Watts selected in layouts). Select one of WATTS/MAHMIN/EFFICIENCY
 //#define DISPLAYEFFICIENCY         // Enable this to display Watts/KMh or Mph for efficiency (if Watts selected in layouts). Select one of WATTS/MAHMIN/EFFICIENCY
-//#define DISPLAYMAHMIN             // Enable this to display average mAh/minKMh (if Watts selected in layouts). Select one of WATTS/MAHMIN/EFFICIENCY
+#define DISPLAYMAHMIN             // Enable this to display average mAh/minKMh (if Watts selected in layouts). Select one of WATTS/MAHMIN/EFFICIENCY
 
 
 /********************       Visual Vario / climbrate Settings         ************************/
-#define DISPLAYVARIO                // Enable this to display Vario slider (if climb rate selected in layouts)
+//#define DISPLAYVARIO                // Enable this to display Vario slider (if climb rate selected in layouts)
 //#define DISPLAYCLIMBRATE          // Enable this to display climb rate (if climb rate selected in layouts)
 //#define VARIOALARM 150            // Enable this to for flashing climb rate warning. Value in cm/sec (if climb rate selected in layouts)
 
@@ -313,10 +315,10 @@
 //#define AUTOCELL                  // Uncomment this to use varying cell count batteries. Overrides GUI/OSD voltage warning settings. Uses CELL_VOLTS_* below unless AUTOCELL_ALARM defined
 //#define AUTOCELL_ALARM            // Use with Autocell - uses the Main battery Alarm value on GUI OSD instead of CELL_VOLTS_WARN. Main battery Alarm is a per cell value instead of full battery. i.e. 3.4 = 10.2v on a 3s 
 //The following variables are available for adjustment unless using FC_VOLTAGE_CONFIG 
-#define CELL_VOLTS_WARN 35          // Specify the cell voltage level at which low voltage warning takes place eg. 35 = 3.5 volts per cell
-#define CELL_VOLTS_MIN 34           // Specify the cell voltage at which it is considered empty
+#define CELL_VOLTS_WARN 30          // Specify the cell voltage level at which low voltage warning takes place eg. 35 = 3.5 volts per cell
+#define CELL_VOLTS_MIN 28           // Specify the cell voltage at which it is considered empty
 #define CELL_VOLTS_MAX 42           // Specify the max normal LIPO cell voltage
-//#define FC_VOLTAGE_CONFIG         // Additionally uncomment this if you want to use the vbat voltage config with BASEFLIGHT, CLEANFLIGHT and BETAFLIGHT on the flight controller (include: min cell voltage, max cell voltage and warning cell voltage)
+#define FC_VOLTAGE_CONFIG         // Additionally uncomment this if you want to use the vbat voltage config with BASEFLIGHT, CLEANFLIGHT and BETAFLIGHT on the flight controller (include: min cell voltage, max cell voltage and warning cell voltage)
 
 
 /********************       Battery Status Settings         ************************/
@@ -350,7 +352,7 @@
 //To show battery voltage from s.port, enable "Use MWii" under "Main Voltage" in GUI
 //To show amperage from s.port, enable "Use MWii" under Amperage in GUI
 //more details: http://code.google.com/p/scarab-osd/wiki/Frsky_SPort
-#define MIN_CELL 320 //Cell Low Flash - No decimal, 3 Digits ie 320 = 3.20v
+#define MIN_CELL 300 //Cell Low Flash - No decimal, 3 Digits ie 320 = 3.20v
 
 
 /********************  TEMPERATURE  settings      *********************/
@@ -389,7 +391,7 @@
 // Regional RF frequency regulations: Choose ONLY ONE option:
 #define VTX_REGION_UNRESTRICTED      // Enable for all 40 channels
 //#define VTX_REGION_AUSTRALIA       // Enable for AU legal channels and power level only
-#define DISPLAY_VTX_INFO             // Enable to show frequency in menu display. 
+//#define DISPLAY_VTX_INFO             // Enable to show frequency in menu display. 
 
 
 /********************  Advanced parameters  settings      *********************/
